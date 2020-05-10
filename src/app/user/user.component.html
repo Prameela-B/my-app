@@ -1,0 +1,73 @@
+<br>
+  <!-- <button class="button" (click)="onAddUser()"class="invisible" >
+    Add User - using onAddUser()
+</button>   using routing userRegister link-->
+<button class="button button-success" routerLink="/edit/a" 
+routerLinkActive="active"  >
+    Add User 
+</button>
+
+<hr>
+<div ng-app="" class="container" style="border: 0px GRAY solid">
+    <div class="detail" style="border: 0pxpx goldenrod solid">
+         <!-- Flag :=: {{this.isVisibleFlag}}   -->
+        <div class="list" *ngIf="this.isVisibleFlag">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <!-- <th>UserID</th> -->
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>DOB</th>
+                    <th>Joining Date</th>
+                    <th>Stream</th>
+                    <th>Semester</th>
+                    <th>Action</th>
+                </tr>
+                <tr *ngFor="let user of userList;index as i">
+                      <td>{{i+1}}</td>  
+                    <!-- <td>{{user.uid}}</td> -->
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.dob}}</td>
+                    <td>{{user.joinDate}}</td>
+                    <td>{{user.stream}}</td>
+                    <td>{{user.semester}}</td>
+                    <td>
+                        <div class="input-group">
+                            <button class="button button-succes" [routerLink]="['/edit',i]" 
+                            >Edit</button>
+                            <button class="button button-danger" (click)="onDeleteUser(i)">Delete</button>
+                            <!-- <button class="button button-danger" (click)="onAddUser(i)">New</button> -->
+                        </div>
+                    </td>
+                </tr>
+                <tr *ngIf="userList.length == 0">
+                    <td colspan="8" style="text-align:center;">... No Records ...</td>
+                </tr> 
+            </table>
+            <br><h4 >No. of Users :{{userList.length}}</h4>
+            <!-- <hr> ng-show="userList.length = 0" ng-repeat="user in userList"-->
+        </div>
+        <div class="detail" style="border: 0px yellowgreen solid" width="100%">
+            
+     <div class="form-group"><br>
+          {{isVisibleFlag}}:
+        <br>Current User Name is : {{userList | json}}  <!---->
+          <br></div>
+                  <!-- Flag : {{isVisibleFlag}} -->
+
+            <!--<app-user-detail [user]="userData" ng-app="" 
+            (nameChange)="onSubmit($event)" -->
+            <!-- <app-user-detail 
+            *ngIf="!this.isVisibleFlag">
+            </app-user-detail>  For edit comment-->
+
+        </div>
+    </div>
+
+
+
+    <!--app-userlist (addUser)="onSubmit2()" >
+
+  </app-userlist-->

@@ -1,0 +1,27 @@
+<p> </p>
+<button class="button" (click)="onAddUser()">Add User</button>
+<br>
+<p></p>
+<div class="container">
+    <div class="list">
+        <h4>
+            Current User Name is : {{ userData | json}}
+        </h4>
+
+    </div>
+    <div class="detail">
+        <app-register-detail 
+[user]="userData" 
+(nameChange)="onSubmit($event)" 
+*ngIf="isVisibleFlag"  
+>
+</app-register-detail>
+    </div>
+</div>
+<div></div>
+
+<br>
+
+<br>
+ <!-- (nameChange)="onSubmit($event)" 
+*ngIf="isVisibleFlag"   -->

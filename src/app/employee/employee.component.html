@@ -1,0 +1,52 @@
+<p>Employee Details</p>
+
+
+<app-employee-detail>
+    
+</app-employee-detail>
+
+
+<br>
+<br>
+
+<button class="button" (click)="onClick($event)">Add Employee</button>
+<input (change)="onChange($event)" style="border-color: rgb(199, 180, 10) 5px solid;">
+
+<!--property binding -->
+<button class="button button-lg"(click)="onToogleImage();">Toogle Image</button>
+<br/>
+<img [src]="imageUrl" width='10%'>
+<br/>
+<!--Structural Directive *ngIf -->
+<hr>
+<h1>Structural Directive *ngIf</h1>
+<hr>
+<br/>
+<button class="button button-lg button-success" (click)="onToogleIfCondition()">
+    Toogle If-Condition
+</button>
+
+<div>
+    Condition Flag : 
+    <b style="color:red">{{conditionFlag}}</b>
+</div>
+<div *ngIf="conditionFlag;then thenBlock else elseBlock">
+     
+</div> 
+<ng-template #thenBlock>
+    <div style="background-color:yellow">
+    <h1>This is if  Content</h1>
+    </div>
+
+</ng-template>
+ 
+<ng-template #elseBlock >
+    <div style="background-color:grey">
+        <h1>This is else Content</h1>
+    </div>
+</ng-template>
+    <!-- <div class="alert alert-danger">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <strong>Title!</strong> Alert body ...
+    </div> -->
+    

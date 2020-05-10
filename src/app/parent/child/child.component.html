@@ -1,0 +1,16 @@
+<p> </p>
+<h3>***From Child component***
+
+</h3>
+<br>
+<label>Child Input Data</label>
+<br>
+<input type="text" (change)="inputValue = $event.target.value">
+<button class="button" (click)="childEvent.emit(inputValue)">
+    Fire Child Event</button>
+<br>
+<b>Parent Data:</b>
+<h1>{{parentData}}</h1>
+<br>
+<br> end here
+<hr>

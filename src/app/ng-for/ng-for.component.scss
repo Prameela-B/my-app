@@ -1,0 +1,23 @@
+
+li{
+    list-style:none;
+    border:1px double #cabfbf;
+    line-height:35px;
+    text-indent:15px;
+}
+button{
+    margin-left:35px;
+}
+ul{ width:200px;}
+li.odd{
+    background-color :rgb(136, 247, 210);
+}
+li.even{
+    background-color :honeydew;
+}
+li.first{
+    background-color :red;
+}
+li.last{
+    background-color :orange;
+}

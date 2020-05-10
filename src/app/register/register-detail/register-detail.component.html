@@ -1,0 +1,30 @@
+<!-- <script src="https://unpkg.com/systemjs@0.19.38/dist/system.src.js"></script>
+<script src="https://code.angularjs.org/tools/typescript.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+
+<div ng-app="" ng-Controller="" style="width:500px;padding:2px;
+border: 1px black solid">
+    <form #regForm>
+
+    <h4> User Registration Block</h4>
+    <div class="form-group" >
+        <label>First Name:</label>
+        <input name="firstName" 
+         [(ngModel)]="user.firstName"  > {{user.firstName}}
+          
+    </div>
+    <div class="form-group" >
+        <label>Last Name:</label>
+        <input name="lastname" 
+         [(ngModel)]="user.lastname"  > {{user.lastname}}
+          
+    </div>
+    <div class="form-group">
+        <input type="submit" class="button button-lg button-success" 
+        (click)="onSubmit()" value="Save">
+    </div>
+    </form>
+</div>

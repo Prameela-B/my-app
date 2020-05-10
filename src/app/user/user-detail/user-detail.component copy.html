@@ -1,0 +1,88 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+<br>
+<div class="container p-3 my-3 border mr-sm-2">
+
+  <form #regForm class="form-row" ng-app="" ng-Controller="">
+    <div class="form-group">
+      <div class="input-group">
+        <label class="col mr-sm-2">First Name :</label></div>
+        <div class="input-group"><input class="form-control mb-2 mr-sm-2" name="firstName" [(ngModel)]="user.firstName" required>
+        <!-- #firstName="ngModel" -->
+      </div>
+      <div class="input-group">
+        <label class="col mr-sm-2">Last Name :</label></div>
+        
+      <div class="input-group"><input class="form-control mb-2 mr-sm-2" name="lastName" 
+        [(ngModel)]="user.lastName">
+        <!--#lastName="ngModel"-->
+      </div>
+      <div class="input-group">
+        <label class="col mr-sm-2">Date of Birth :</label></div>
+        <!--input class="form-control mb-2 mr-sm-2" name="dob"         
+        [(ngModel)]="user.dob" ng-Model="Date"
+          ngbDatepicker #d="ngbDatepicker"><button class="btn btn-outline-secondary calendar"
+          (click)="d.toggle()"></button-->
+          
+      <div class="input-group"><input name="dob" [(ngModel)]="user.dob"
+          type="date" class="form-control">
+        <!--#dob="ngModel" -->
+      </div>
+      <div class="input-group">
+        <label class="col mr-sm-2">Joining Date :
+          <!--#joinDate="ngModel"--></label></div>
+          
+      <div class="input-group"><input class="form-control mb-2 mr-sm-2"
+          name="joinDate"
+           [(ngModel)]="user.joinDate"
+           type="date"  >
+        <!--input class="form-control mb-2 mr-sm-2"
+           placeholder="dd-mm-yyyy" 
+           name="joinDate" [(ngModel)]="user.joinDate"
+          ngbDatepicker #dd="ngbDatepicker"><button class="btn btn-outline-secondary calendar"
+          (click)="dd.toggle()"></button-->
+          <!--input class="form-control mb-2 mr-sm-2"
+          name="joinDate"
+           [(ngModel)]="user.joinDate" ngbDatepicker
+           placeholder="dd-mm-yyyy" 
+          type="ngbDatepicker" #dd="ngbDatepicker" 
+          >
+          <button class="btn btn-outline-secondary calendar"
+          (click)="dd.toggle()"></button-->
+      </div>
+      <div class="input-group">
+        <label class="col mr-sm-2">Stream :</label></div>
+        
+      <div class="input-group"><input class="form-control mb-2 mr-sm-2" name="stream" [(ngModel)]="user.stream">
+        <!--#stream="ngModel"-->
+      </div>
+      <div class="input-group">
+        <label class="col mr-sm-2" class="mr-sm-2">Semester :</label></div>
+       
+      <div class="input-group"> <input class="form-control mb-2 mr-sm-2" name="semester" [(ngModel)]="user.semester">
+        <!--#semester="ngModel"-->
+      </div>
+      <div>
+        <input class="button button-rg button-success" (click)="onSubmit()" value="Save">
+      </div>
+      <hr>
+
+    </div>
+  </form>
+  <hr />
+  <!--form class="form-inline">
+        <div class="form-group">
+          <pre>Model: {{ model | json }}</pre>
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd"
+                  name="dp" ngModel="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <! --/form-->
+</div>
+<hr>

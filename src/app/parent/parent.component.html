@@ -1,0 +1,25 @@
+<!--p>parent works!</p-->
+<div class="container">
+    <div class="parent-div" style="background-color:chocolate;">
+        <h2>Parent component</h2>
+        <br>
+        <label>Parent Input Data</label>
+        <br>
+        <input type="text" (change)="inputValue = $event.target.value">
+         <br>
+        <b>Child Data: <h2>{{childData}}</h2></b>
+        
+    </div>
+    <div class="child-div" style="background-color: cadetblue;">
+        <app-child 
+        [parentData]="inputValue" 
+        (childEvent)="childData=$event"></app-child>
+
+
+    </div>
+
+
+</div>
+<!--app-child>    
+</app-child> 
+<h3>Child ends!!</h3-->

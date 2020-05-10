@@ -1,0 +1,28 @@
+<p>usernamelist works!</p>
+  <button class="button" (click)="onAddUserNameFlag()">
+    Add UserName : {{isVisibleFlagUN}}
+</button>  
+<div class="container" 
+ style="border: 0px royalblue solid">
+    <div class=form-group>
+       
+    </div>
+    <div class="form-group" ng-app="" *ngIf="isVisibleFlagUN">
+        <form #regForm="ngForm" 
+        style="border:0px darksalmon solid;" 
+        (ngSubmit)="onSubmit()" >
+            <div class="form-group">
+                <label>User</label>
+                <input name="userName" [(ngModel)]="userName">
+                {{userName}}
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add User" 
+                class=" button button-success">
+                
+                <!-- (click)="onAddUserName()"  -->
+            </div>
+        </form>
+    </div>
+    
+</div>

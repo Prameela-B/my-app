@@ -1,0 +1,71 @@
+<form #regForm class="form-group" ng-app="" ng-Controller="">
+  <br><br>
+  <h2>User Registration Form</h2>
+  <hr><br>
+  <div class="container" style="background-color: white; padding: 10px;">
+    <div class="form-group">
+      <div class="input-group">
+        <!-- <label class="input-group">ID : </label> -->
+        <!-- myUid:{{myUid}}  -->
+        <!--input class="col form-control mb-2 mr-sm-2" name="id" [(ngModel)]="user.id" ng-value="{{userList.length+1}}"-->
+        <!-- <input class="col form-control mb-2 mr-sm-2" name="uid"  [(ngModel)] = "this.id" > -->
+        <!-- #id="ngModel" [(ngModel)] = "user.uid" -->
+      </div>
+      <div class="input-group">
+        <label class="input-group">First Name : </label>
+        <input class="col form-control mb-2 mr-sm-2" name="firstName" [(ngModel)]="user.firstName" >
+        <!-- #firstName="ngModel" -->
+      </div>
+      <div class="input-group">
+        <label class="input-group">Last Name :</label>
+        <input class="col form-control mb-2 mr-sm-2" name="lastName" [(ngModel)]="user.lastName" >
+        <!--#lastName="ngModel"-->
+      </div>
+      <div class="input-group">
+        <label class="input-group">Date of Birth :</label>
+        <input class="col form-control mb-2 mr-sm-2" placeholder="dd/mm/yyyy" name="user.dob" #c2="ngModel"
+          [(ngModel)]="user.dob" ngbDatepicker #d1="ngbDatepicker" >
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+        </div>
+        <!--#dob="ngModel" -->
+      </div>
+      <div class="input-group">
+        <label class="input-group">Joining Date :
+          <!--#joinDate="ngModel"--></label>
+        <input class="col form-control mb-2 mr-sm-2" placeholder="dd/mm/yyyy" name="user.joinDate" #c2="ngModel"
+          [(ngModel)]="user.joinDate" ngbDatepicker #d2="ngbDatepicker" >
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+        </div>
+      </div>
+      <div class="input-group">
+        <label class="input-group">Stream : </label>
+        <select class="col form-control mb-2 mr-sm-2" name="stream" [(ngModel)]="user.stream">
+          <option *ngFor="let str of streams" [value]="str.sname">
+            {{str.id}} : {{str.sname}}
+          </option>
+        </select>
+        <!-- <br>streams.length :: {{streams.length}} -->
+        <!-- 
+          <input class="form-control mb-2 mr-sm-2" 
+          name="stream" [(ngModel)]="user.stream">
+        <! --#stream="ngModel"-->
+      </div>
+      <div class="input-group">
+        <label class="input-group">Semester : </label>
+        <select class="col form-control mb-2 mr-sm-2" name="semester" [(ngModel)]="user.semester">
+          <option *ngFor="let sem  of semesters" [value]="sem.semName">
+            {{sem.id}}:{{sem.semName}}
+          </option>
+        </select>
+        <!--input class="form-control mb-2 mr-sm-2" name="semester" [(ngModel)]="user.semester">
+        <! --#semester="ngModel"-->
+      </div>
+      <div>
+        <input class="button button-rg button-success" 
+        (click)="onSubmit()" value="Save">
+      </div>
+    </div>
+  </div>
+</form>
